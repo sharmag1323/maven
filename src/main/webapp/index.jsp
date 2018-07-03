@@ -2,7 +2,7 @@
 <html>
 <body style="background-color:powderblue;">
 
-<h1>Welcome to Maven Project Demo v shanmukha  </h1>
+<h1>Hi All  </h1>
 <h2>You are running my project </h2>
 
 
