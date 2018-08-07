@@ -15,7 +15,7 @@ try {
        }
     }
    stage('Deploy') {
-        sh "/bin/cp -f $WORKSPACE/Build-${env.BUILD_NUMBER}/vsvyadav_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war /opt/apache-tomcat-8.5.32/webapps/"
+        sh "/bin/cp -f $WORKSPACE/Build-${env.BUILD_NUMBER}/vsvyadav_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war /opt/apache-tomcat-8.5.32/webapps/vsvyadav.war"
     }
   
    delivery.artifactory()
