@@ -16,8 +16,8 @@ try {
     }
    stage('Deploy') {
         sh "/bin/cp -f $WORKSPACE/Build-${env.BUILD_NUMBER}/sai_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war /opt/apache-tomcat-7.0.90/webapps/sai.war"
-        sh "/bin/ls"
-       sh "/bin/ls"
+        sh "/bin/opt/apache-tomcat-7.0.90/webapps;ls"
+       sh "/bin/ls opt/apache-tomcat-7.0.90/webapps/"
        sh "/bin/rm -rf /opt/apache-tomcat-7.0.90/webapps/ROOT/"
        sh "/bin/mv /opt/apache-tomcat-7.0.90/webapps/sai /opt/apache-tomcat-7.0.90/webapps/ROOT/" 
     }
