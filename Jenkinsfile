@@ -1,5 +1,5 @@
 
-node('new43') {
+node('sai') {
 // Delete the workspace
 //deleteDir()
 stage('Retrieve source code') {
@@ -15,7 +15,7 @@ try {
        }
     }
    stage('Deploy') {
-        sh "/bin/cp -f $WORKSPACE/Build-${env.BUILD_NUMBER}/vsvyadav_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war /opt/apache-tomcat-8.5.32/webapps/vsvyadav.war"
+        sh "/bin/cp -f $WORKSPACE/Build-${env.BUILD_NUMBER}/vsvyadav_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war //opt/apache-tomcat-7.0.90/webapps/vsvyadav.war"
     }
   
    delivery.artifactory()
