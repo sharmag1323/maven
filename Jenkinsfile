@@ -12,7 +12,8 @@ try {
       docker.image('maven:3.5-jdk-8-alpine').inside {
         sh "mvn clean package -Dbuild.number=${BUILD_NUMBER}"
         sh "/bin/mv -f $WORKSPACE/target/*.war $WORKSPACE/Build-${env.BUILD_NUMBER}/sai_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war"
- slackSend baseUrl: 'https://devopsguru-workspace.slack.com/services/hooks/jenkins-ci/', channel: 'general', color: 'red', message: 'jenkins build report', tokenCredentialId: 'jenkins-slack'
+ slackSend baseUrl: 'https://devopsguru-workspace.slack.com/services/hooks/jenkins-ci/', channel: 'general', color: 'red', message: 'hai build success', tokenCredentialId: 'jenkins-slack'
+
       }
     }
     
