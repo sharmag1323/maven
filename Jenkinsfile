@@ -12,7 +12,7 @@ try {
       docker.image('maven:3.5-jdk-8-alpine').inside {
         sh "mvn clean package -Dbuild.number=${BUILD_NUMBER}"
         sh "/bin/mv -f $WORKSPACE/target/*.war $WORKSPACE/Build-${env.BUILD_NUMBER}/sai_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war"
- slackSend baseUrl: 'https://devopsguru-workspace.slack.com/services/hooks/jenkins-ci/', channel: 'general', color: 'red', message: 'hai build success', tokenCredentialId: 'jenkins-slack'
+ slackSend baseUrl: 'https://devopsguru-workspace.slack.com/services/hooks/jenkins-ci/', channel: 'general', color: 'red', message: 'hai maven job success', tokenCredentialId: 'jenkins-slack'
 
       }
     }
@@ -22,7 +22,8 @@ try {
         
        sh "/bin/rm -rf /opt/apache-tomcat-7.0.90/webapps/ROOT/"
        sh "/bin/mv /opt/apache-tomcat-7.0.90/webapps/sai /opt/apache-tomcat-7.0.90/webapps/ROOT/" 
-    }
+   slackSend baseUrl: 'https://devopsguru-workspace.slack.com/services/hooks/jenkins-ci/', channel: 'general', color: 'red', message: 'maven job success........', tokenCredentialId: 'jenkins-slack' 
+   }
   
    delivery.artifactory()
   }
